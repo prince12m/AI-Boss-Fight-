@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class STate : MonoBehaviour
+public class State
 {
     public Character character;
     public StateMachine stateMachine;
@@ -18,7 +18,7 @@ public class STate : MonoBehaviour
     public InputAction crouchAction;
     public InputAction sprintAction;
 
-    public STate(Character _character, StateMachine _stateMachine)
+    public State(Character _character, StateMachine _stateMachine)
     {
         character = _character;
         stateMachine = _stateMachine;

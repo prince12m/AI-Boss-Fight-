@@ -4,20 +4,20 @@ using UnityEngine;*/
 
 public class StateMachine
 {
-    public StateMachine currentstate;
+    public State currentState;
 
     
-     * public void Initialzize(StateMachine startingState)
-    {
-        currentstate = startingState;
+     public void Initialzize(State startingState)
+     {
+        currentState = startingState;
         startingState.Enter();
-    }
+     }
 
-    public void ChangeState(StateMachine newState)
+    public void ChangeState(State newState)
     {
-        currentstate.Exit();
+        currentState.Exit();
 
-        currentstate = newState;
+        currentState = newState;
         newState.Enter();
     }
 

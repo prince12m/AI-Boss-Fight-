@@ -25,11 +25,12 @@ public class Character : MonoBehaviour
     public float airControl = 0.5f;
 
     public StateMachine movementSM;
-    /*public StandingState standing;
+    public StandingState standing;
     public JumpingState jumping;
     public CrouchingState crouching;
-    public SprintState Sprinting;
-    public SprintJumpState sprintjumping;*/
+    public LandingState landing;
+    public SprintState sprinting;
+    public SprintJumpState sprintjumping;
 
     [HideInInspector]
     public float gravityValue = -9.81f;
