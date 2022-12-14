@@ -61,15 +61,31 @@ public class StandingState : State
         velocity.y = 0f;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void LogicUpdate()
     {
-        
+        base.LogicUpdate();
+
+        character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);
+
+        if (sprint)
+        {
+            stateMachine.ChangeState(character.sprinting);
+        }
+        if (jump)
+        {
+            stateMachine.ChangeState(character.jumping);
+        }
+        if (crouch)
+        {
+            stateMachine.ChangeState(character.crouching);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void PhysicsUpdate()
     {
-        
+        base.PhysicsUpdate();
+
+        gravityVelocity.y += gravityValue * Time.deltaTime;
+        grounnded = character.controller.osGrounded;
     }
 }
